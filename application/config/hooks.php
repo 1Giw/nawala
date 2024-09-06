@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $hook['pre_system'] = function() {
   $envPath = FCPATH . '.env';
   echo "Path to .env: " . $envPath; // Tambahkan ini untuk memastikan path benar
-  $dotenv = \Dotenv\Dotenv::createImmutable(FCPATH);
+  $dotenv = new \Dotenv\Dotenv(FCPATH);
   try {
       $dotenv->load();
       // Debugging: tampilkan variabel lingkungan yang dimuat
