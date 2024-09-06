@@ -16,8 +16,8 @@
             "dest": "/api/index.php"
         },
         {
-            "source": "/upload/(.*)",
-            "destination": "/upload/$1"
+            "src": "/upload/(.*)",
+            "dest": "/upload/$1"
         }
     ]
 }
