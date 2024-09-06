@@ -12,12 +12,12 @@
             "dest": "/assets/$1"
         },
         {
-            "src": "/(.*)",
-            "dest": "/api/index.php"
-        },
-        {
             "src": "/upload/(.*)",
             "dest": "/upload/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
         }
     ]
 }

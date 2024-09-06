@@ -18,7 +18,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
 
 
     <!-- Vendor CSS Files -->
@@ -63,13 +65,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
                 </li><!-- End Search Icon-->
 
 
-
-
-
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                    <img src="<?= base_url('upload/avatar/' . $user->FOTO) ?>" alt="Profile" class="rounded-circle">
+                        <img src="<?= base_url('upload') ?>/avatar/<?= $user->FOTO; ?>" alt="profile"
+                            class="rounded-circle">
                         <span class="d-none d-md-block dropdown-toggle ps-2"><?= $user->NAME; ?></span>
                     </a><!-- End Profile Iamge Icon -->
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
@@ -107,7 +107,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
     </footer><!-- End Footer -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
 
 
     <!-- Vendor JS Files -->
@@ -131,7 +132,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <script src="<?= base_url('assets') ?>/assets/js/main.js"></script>
 
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#myTable').DataTable();
         });
     </script>
