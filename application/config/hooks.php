@@ -18,10 +18,6 @@ $hook['pre_system'] = function() {
   $dotenv = new \Dotenv\Dotenv(FCPATH);
   try {
       $dotenv->load();
-      // Debugging: tampilkan variabel lingkungan yang dimuat
-      echo '<pre>';
-      print_r($_ENV);
-      echo '</pre>';
   } catch (Exception $e) {
       echo "Error loading .env file: " . $e->getMessage();
   }
