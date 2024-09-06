@@ -26,14 +26,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $env = ENVIRONMENT;
 
 // Mengambil URL dari variabel lingkungan
-// if ($env === 'production') {
-//     $config['base_url'] = getenv('BASE_URL_PRODUCTION');
-//     $config['asset_url'] = getenv('ASSETS_URL_PRODUCTION');
-// } else {
-//     $config['base_url'] = getenv('BASE_URL_DEVELOPMENT');
-//     $config['asset_url'] = getenv('ASSETS_URL_DEVELOPMENT');
-// }
-$config['base_url'] = '';
+if ($env === 'production') {
+    $config['base_url'] = getenv('BASE_URL_PRODUCTION');
+    $config['asset_url'] = getenv('ASSETS_URL_PRODUCTION');
+} else {
+    $config['base_url'] = getenv('BASE_URL_DEVELOPMENT');
+    $config['asset_url'] = getenv('ASSETS_URL_DEVELOPMENT');
+}
 
 /*
 |--------------------------------------------------------------------------
