@@ -13,12 +13,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 # Load phpdotenv
 $hook['pre_system'] = function() {
-  $envPath = FCPATH . '.env';
-  echo "Path to .env: " . $envPath; // Tambahkan ini untuk memastikan path benar
-  $dotenv = new \Dotenv\Dotenv(FCPATH);
-  try {
-      $dotenv->load();
-  } catch (Exception $e) {
-      echo "Error loading .env file: " . $e->getMessage();
-  }
+    $dotenv = \Dotenv\Dotenv::createImmutable(FCPATH);
+    try {
+        $dotenv->load();
+    } catch (Exception $e) {
+        echo "Error loading .env file: " . $e->getMessage();
+    }
 };
