@@ -214,8 +214,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         </div>
                         <input type="hidden" name="old_password" value="<?= $edit->PASSWORD ?>" class="form-control">
                         <input type="hidden" name="id_login" value="<?= $edit->ID_LOGIN ?>" class="form-control">
-                        <input type="hidden" name="id_bagian" value="0" class="form-control">
-                        <input type="hidden" name="pimpinan" value="1" class="form-control">
+                        <!-- <input type="hidden" name="id_bagian" value="0" class="form-control"> -->
+                        <input type="hidden" name="pimpinan" value="0" class="form-control">
                         <small class="text-danger">Kosongkan kolom pasword jika tidak ingin merubah password yang ada.</small>
                     </div>
                     <div class="modal-footer">

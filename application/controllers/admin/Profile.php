@@ -7,6 +7,8 @@ class Profile extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Auth_model');
+        $this->load->library('form_validation');
+        $this->load->helper('validation_skip');
         if (!$this->Auth_model->current_user()) {
             redirect('auth/login');
         }
@@ -23,12 +25,11 @@ class Profile extends CI_Controller
 
     public function update()
     {
-        $this->load->library('form_validation');
 
         $user = $this->Auth_model;
         $validation = $this->form_validation;
         $validation->set_rules($user->rules_update());
-
+        
         if ($validation->run()) {
             $user->update();
             $this->session->set_flashdata('sukses', 'Data Pengguna berhasil diperbarui');

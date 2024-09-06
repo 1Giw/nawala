@@ -53,11 +53,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
                             </div>
 
-                            <input type="hidden" name="id_login" value="<?= $user->ID_LOGIN ?> " />
-                            <input type="hidden" name="id_pegawai" value="<?= $user->ID_PEGAWAI ?> " />
-                            <input type="hidden" name="id_bagian" value="<?= $user->ID_BAGIAN ?> " />
-                            <input type="hidden" name="aktif" value="<?= $user->AKTIF ?> " />
-                            <input type="hidden" name="pimpinan" value="<?= $user->PIMPINAN ?> " />
+                            <input type="hidden" name="id_login" value="<?= $user->ID_LOGIN ?>" />
+                            <input type="hidden" name="id_pegawai" value="<?= $user->ID_PEGAWAI ?>" />
+                            <input type="hidden" name="id_bagian" value="<?= $user->ID_BAGIAN ?>" />
+                            <input type="hidden" name="aktif" value="<?= $user->AKTIF ?>" />
+                            <input type="hidden" name="pimpinan" value="<?= $user->PIMPINAN ?>" />
                             <input type="hidden" name="old_password" value="<?= $user->PASSWORD ?>" />
 
                             <div class="row mb-3">

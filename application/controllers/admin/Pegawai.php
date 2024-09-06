@@ -14,7 +14,6 @@ class Pegawai extends CI_Controller
         parent::__construct();
         $this->load->model('Pegawai_model');
         $this->load->model('Pegawai_login_model');
-
         $this->load->model('Auth_model');
         $this->load->library('form_validation');
         if (!$this->Auth_model->current_user()) {
@@ -94,8 +93,6 @@ class Pegawai extends CI_Controller
 
     public function login_add()
     {
-        $this->load->library('form_validation');
-
         $Data = $this->Pegawai_login_model;
         $validation = $this->form_validation;
         $validation->set_rules($Data->rules());
@@ -114,13 +111,11 @@ class Pegawai extends CI_Controller
 
     public function login_edit()
     {
-        $this->load->library('form_validation');
-
         $Data = $this->Pegawai_login_model;
         $validation = $this->form_validation;
-        $validation->set_rules($Data->rules());
+        $validation->set_rules($Data->rules_update());
         $cekUsername = $this->Pegawai_login_model->cekUsername($this->input->post('username'));
-
+        
         if ($validation->run() && $cekUsername < 1) {
             $Data->update();
             $this->session->set_flashdata('sukses', 'Data Akun Login Pegawai Berhasil di ubah');

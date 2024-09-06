@@ -105,7 +105,6 @@ class Auth_model extends CI_Model
     public function update()
     {
         $post = $this->input->post();
-        $this->USER_ID = $post["user_id"];
         $this->NAME = $post["name"];
         $this->EMAIL = $post["email"];
         $this->USERNAME = $post["username"];
@@ -115,6 +114,7 @@ class Auth_model extends CI_Model
             $this->PASSWORD = password_hash($post["password"], PASSWORD_DEFAULT);
         }
         if (!empty($_FILES["foto"]["name"])) {
+            $this->_deleteImage($post["user_id"]);
             $this->FOTO = $this->_uploadImage();
         } else {
             $this->FOTO = $post["old_foto"];

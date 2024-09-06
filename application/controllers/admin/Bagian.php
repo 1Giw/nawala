@@ -9,6 +9,7 @@ class Bagian extends CI_Controller
         $this->load->model('Auth_model');
         $this->load->model('Bagian_model');
         $this->load->library('form_validation');
+        $this->load->helper('validation_skip');
         if (!$this->Auth_model->current_user()) {
             redirect('auth/login');
         }
@@ -17,7 +18,6 @@ class Bagian extends CI_Controller
     public function index()
     {
         $this->data['bidang'] = $this->Bagian_model->getAll();
-
         $this->data['user'] = $this->Auth_model->current_user();
         $this->data['judul'] = 'Data Bidang / Urusan';
         $this->data['menu'] = 'admin/v_menu';
@@ -44,19 +44,24 @@ class Bagian extends CI_Controller
     {
         $Data = $this->Bagian_model;
         $validation = $this->form_validation;
-        $validation->set_rules($Data->rules());
+        $rules = skip_validation_rule($Data->rules(), 'ID_BAGIAN');
+        $validation->set_rules($rules);
 
         if ($validation->run()) {
             $Data->update();
-            $this->session->set_flashdata('sukses', 'Data Jenis Bagian Berhasil di ubah');
+            $this->session->set_flashdata('sukses', 'Data Jenis Bagian Berhasil disimpan');
+        } else {
+            $this->session->set_flashdata('gagal', 'Data Jenis Bagian Gagal disimpan');
         }
 
         redirect(site_url('admin/bagian'));
     }
 
+
     public function hapus($id = null)
     {
-        if (!isset($id)) show_404();
+        if (!isset($id))
+            show_404();
         $cekPakai = $this->Bagian_model->cekPakai($id);
         if ($cekPakai > 0) {
             $this->session->set_flashdata('gagal', 'Data Jenis Bagian Tidak bisa hapus, karena sudah di gunakan di penempatan data Pegawai');

@@ -146,8 +146,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <input type="text" name="nm_bidang" class="form-control" placeholder="Nama Bidang" value="<?= $row->NM_BAGIAN ?>" required />
-                        <input type="hidden" name="id_bidang" class="form-control" value="<?= $row->ID_BAGIAN ?>" required />
+                        <input type="text" name="nm_bagian" class="form-control" placeholder="Nama Bidang" value="<?= $row->NM_BAGIAN ?>" required />
+                        <input type="hidden" name="id_bagian" class="form-control" value="<?= $row->ID_BAGIAN ?>" required />
 
                     </div>
                     <div class="modal-footer">

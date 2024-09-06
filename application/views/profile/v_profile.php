@@ -67,13 +67,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
                             <div class="row mb-3">
                                 <label for="inputNumber" class="col-sm-2 col-form-label">Foto</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" type="file" name="foto" id="formFile">
+                                    <input class="form-control" type="file" name="foto" id="formFile" accept="image/*">
                                 </div>
                             </div>
 
-                            <input type="hidden" name="user_id" value="<?= $user->USER_ID ?> " />
+                            <input type="hidden" name="user_id" value="<?= $user->USER_ID ?>" />
                             <input type="hidden" name="old_password" value="<?= $user->PASSWORD ?>" />
-                            <input type="hidden" name="old_foto" value="<?= $user->FOTO ?> " />
+                            <input type="hidden" name="old_foto" value="<?= $user->FOTO ?>" />
 
                             <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label"></label>

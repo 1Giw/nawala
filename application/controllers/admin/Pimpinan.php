@@ -7,6 +7,7 @@ class Pimpinan extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Pegawai_login_model');
+        $this->load->library('form_validation');
         $this->load->model('Auth_model');
         if (!$this->Auth_model->current_user()) {
             redirect('auth/login');
@@ -49,13 +50,14 @@ class Pimpinan extends CI_Controller
 
     public function edit()
     {
-        $this->load->library('form_validation');
 
         $Data = $this->Pegawai_login_model;
         $validation = $this->form_validation;
-        $validation->set_rules($Data->rules());
+        $validation->set_rules($Data->rules_update());
         $cekUsername = $this->Pegawai_login_model->cekUsername($this->input->post('username'));
-
+        // print_r($cekUsername);
+        // print_r($validation->run());
+        // die;
         if ($validation->run() && $cekUsername < 1) {
             $Data->update();
             $this->session->set_flashdata('sukses', 'Data Akun Pimpinan Berhasil di ubah');

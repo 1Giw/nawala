@@ -207,6 +207,6 @@ class Pegawai_login_model extends CI_Model
 
     public function delete($id)
     {
-        return $this->db->delete($this->_table, array('ID_LOGIN' => $id));
+        $this->db->delete($this->_table, array('ID_LOGIN' => $id));
     }
 }
